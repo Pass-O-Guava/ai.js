@@ -1,0 +1,143 @@
+<!-- https://huggingface.co/datasets/Xenova/transformers.js-docs/resolve/main/nougat_paper.png -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>TransformerJs Nougat</title>
+    <link href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+            padding: 20px;
+            margin: 2em;
+            color: #3d3d3d;
+            --mdc-theme-primary: #007f8b;
+            --mdc-theme-on-primary: #f1f3f4;
+        }
+
+        .container {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            max-width: 80%;
+            margin: auto;
+            margin-top: 20px;
+        }
+
+        h1 {
+            color: #007f8b;
+        }
+
+        section {
+            opacity: 1;
+            transition: opacity 500ms ease-in-out;
+        }
+
+        .invisible {
+            opacity: 0.2;
+        }
+
+        .output-container {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+
+        .detectOnClick img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        .detectOnClick,
+        .markdown-output {
+            flex-basis: 48%;
+            /* 每个容器占据大约一半的宽度 */
+        }
+
+        .markdown-output {
+            /* border: 1px solid #ddd; */
+            padding: 15px;
+            overflow-y: auto;
+            /* 如果内容过多，则允许滚动 */
+            /* height: 400px; */
+            border-radius: 10px;
+        }
+
+        input[type="text"],
+        input[type="number"],
+        input[type="file"] {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-sizing: border-box;
+            margin-bottom: 20px;
+        }
+
+        button {
+            background-color: #0056b3;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            text-transform: uppercase;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-right: 10px;
+        }
+
+        button:hover {
+            background-color: #004494;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>Nougat: Image to Markdown</h1>
+
+        <div>
+            <a href="https://huggingface.co/docs/transformers/model_doc/nougat" target="_blank">Overview</a>
+            <a href="https://huggingface.co/Xenova/nougat-small" target="_blank">Model</a>
+            <a href="https://arxiv.org/abs/2308.13418" target="_blank">Paper</a>
+        </div>
+
+        <section id="demos" class="invisible">
+
+            <div class="output-container">
+                <div class="detectOnClick">
+                    <img id="imageDisplay"
+                        src="https://huggingface.co/datasets/Xenova/transformers.js-docs/resolve/main/nougat_paper.png"
+                        crossorigin="anonymous" title="Click to get info!" />
+                </div>
+                <div class="markdown-output" id="output">
+                    <!-- Markdown输出将在这里显示 -->
+                </div>
+            </div>
+
+        </section>
+
+        <input type="file" id="imageInput" accept="image/*">
+
+        <div>
+            <button id="btn_run">Start Detection</button>
+        </div>
+
+        <div>
+            <div id="output"></div>
+        </div>
+
+    </div>
+
+    <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script type="module" src="./index.js"></script>
+
+</body>
+
+</html>

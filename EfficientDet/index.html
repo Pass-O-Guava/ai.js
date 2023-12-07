@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>MediaPipe</title>
+    <link href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+            padding: 20px;
+            margin: 2em;
+            color: #3d3d3d;
+            --mdc-theme-primary: #007f8b;
+            --mdc-theme-on-primary: #f1f3f4;
+        }
+
+        h1 {
+            color: #007f8b;
+        }
+
+        section {
+            opacity: 1;
+            transition: opacity 500ms ease-in-out;
+        }
+
+        .invisible {
+            opacity: 0.2;
+        }
+
+        .detectOnClick {
+            position: relative;
+            float: left;
+            width: 70%;
+            margin: 2% 1%;
+            cursor: pointer;
+            z-index: 0;
+        }
+
+        .detectOnClick p {
+            position: absolute;
+            padding: 5px;
+            background-color: #007f8b;
+            color: #fff;
+            border: 1px dashed rgba(255, 255, 255, 0.7);
+            z-index: 2;
+            font-size: 12px;
+            margin: 0;
+        }
+
+        .detectOnClick img {
+            height: auto;
+            border-radius: 10px;
+        }
+
+        .highlighter {
+            background: rgba(0, 255, 0, 0.25);
+            border: 1px dashed #fff;
+            z-index: 1;
+            position: absolute;
+        }
+
+        .container {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            max-width: 70%;
+            margin: auto;
+            margin-top: 20px;
+        }
+
+        input[type="text"],
+        input[type="number"],
+        input[type="file"] {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-sizing: border-box;
+            margin-bottom: 20px;
+        }
+
+        .inline-elements {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+
+        button {
+            background-color: #0056b3;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            text-transform: uppercase;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-right: 10px;
+        }
+
+        button:hover {
+            background-color: #004494;
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>EfficientDet</h1>
+
+        <section id="demos" class="invisible">
+
+            <p><b>Click on an image below</b> to detect objects in the image.</p>
+
+            <div class="detectOnClick">
+                <img id="imageDisplay" src="https://assets.codepen.io/9177687/coupledog.jpeg" width="100%"
+                    crossorigin="anonymous" title="Click to get classification!" />
+            </div>
+
+            <div>
+                <input type="file" id="imageInput" accept="image/*">
+            </div>
+
+        </section>
+    </div>
+    <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
+    <script type="module" src="./index.js"></script>
+
+</body>
+
+</html>

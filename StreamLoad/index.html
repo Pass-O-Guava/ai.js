@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>媒体流展示 - 科技网站</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f5f5f5;
+            margin: 20px;
+        }
+
+        button {
+            padding: 10px;
+            font-size: 16px;
+            margin-bottom: 10px;
+            background-color: #3498db;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+
+        button:hover {
+            background-color: #2980b9;
+        }
+
+        audio, video {
+            width: 100%;
+            max-width: 600px;
+            display: none;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>媒体流展示</h1>
+
+    <button id="startAudio">开启麦克风</button>
+    <audio id="audioOutput" controls></audio>
+
+    <button id="startVideo">开启摄像头</button>
+    <video id="videoOutput" controls></video>
+
+    <script src="stream.js"></script>
+</body>
+</html>

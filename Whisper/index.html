@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Whisper Demo</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #f8f8f8;
+      margin: 20px;
+      text-align: center;
+    }
+
+    h1 {
+      color: #333;
+    }
+
+    a {
+      color: #3498db;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    div {
+      margin-top: 20px;
+    }
+
+    audio {
+      width: 100%;
+      max-width: 400px;
+      margin-bottom: 10px;
+    }
+
+    button {
+      padding: 10px;
+      font-size: 16px;
+      background-color: #3498db;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+      border-radius: 4px;
+    }
+
+    button:hover {
+      background-color: #2980b9;
+    }
+
+    p {
+      color: #555;
+    }
+
+    #output-container {
+      margin-top: 20px;
+      text-align: center;
+    }
+
+    #output {
+      color: #3498db;
+    }
+  </style>
+</head>
+
+<body>
+
+  <h1>Whisper</h1>
+  <a href="https://huggingface.co/Xenova/whisper-small" target="_blank">whisper-small</a>
+
+  <div>
+    <!-- 已有文件 -->
+    <span>
+      <audio src="https://huggingface.co/datasets/Xenova/transformers.js-docs/resolve/main/french-audio.mp3"
+        controls>您的浏览器不支持 audio 元素</audio>
+    </span>
+  </div>
+
+  <div id="output-container">
+    <p id="output"></p>
+  </div>
+
+  <div>
+    <button hidden id="btn">ASR翻译</button>
+  </div>
+
+  <div>
+    <p id="info"></p>
+  </div>
+
+  <script type="module" src="index.js"></script>
+
+</body>
+
+</html>

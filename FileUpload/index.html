@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <title>File Upload</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        .container {
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-top: 50px;
+        }
+
+        #outputContainer {
+            background-color: #f4f4f4;
+            padding: 10px;
+            margin-top: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 5px #f4f4f4;
+        }
+
+        #filePreview {
+            margin-top: 10px;
+        }
+
+        .custom-file-upload {
+            display: inline-block;
+            padding: 10px 20px;
+            cursor: pointer;
+            background-color: rgba(76, 175, 165, 0.773);
+            color: white;
+            border-radius: 10px;
+            transition: background-color 0.3s;
+        }
+
+        .custom-file-upload:hover {
+            background-color: rgba(160, 208, 255, 0.773)
+        }
+
+        .custom-file-upload input {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h2 class="mt-4">File Upload and Preview</h2>
+        <h6>Supports images, videos, audio, and PDFs</h6>
+
+        <label for="fileInput" class="custom-file-upload">
+            <span>选择文件</span>
+            <input type="file" id="fileInput" name="file" accept="image/*,audio/*,video/*,application/pdf">
+        </label>
+
+        <div id="outputContainer">
+            <p id="output"></p>
+        </div>
+
+        <div id="filePreview"></div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.1/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="upload.js"></script>
+</body>
+
+</html>
